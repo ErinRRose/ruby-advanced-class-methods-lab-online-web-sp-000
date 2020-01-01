@@ -57,7 +57,6 @@ class Song
     song.name = filename.split(' - ')[1].split('.')[0]
     song.artist_name = filename.split(' - ')[0]
     ## drop flie ext
-    song.name = song.name.split('.')[0]
     song
   end
 
