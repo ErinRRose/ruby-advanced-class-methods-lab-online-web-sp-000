@@ -54,10 +54,10 @@ class Song
   def self.new_from_filename(filename)
     song = self.new
     ## split filename
-    song.name = filename.spilt(' - ')[1]
-    song.artist_name = filename.spilt(' - ')[0]
+    song.name = filename.split(' - ')[1]
+    song.artist_name = filename.split(' - ')[0]
     ## drop flie ext
-    song.name = song.name.spilt('.')[0]
+    song.name = song.name.split('.')[0]
     song
   end
 
