@@ -39,7 +39,7 @@ class Song
     song
   end
   def self.find_or_create_by_name(name)
-    binding.pry
     song = self.find_by_name(name)
+    binding.pry
   end
 end
