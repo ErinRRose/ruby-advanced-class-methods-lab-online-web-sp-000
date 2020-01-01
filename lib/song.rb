@@ -59,5 +59,5 @@ class Song
     ## drop flie ext
     song.name = song.name.spilt('.')[0]
     song
-    
+
 end
