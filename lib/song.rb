@@ -38,6 +38,7 @@ class Song
     song.name = name
     song
   end
+
   def self.find_or_create_by_name(name)
     song = self.find_by_name(name)
       if song == nil
@@ -45,9 +46,18 @@ class Song
       end
       song
     end
+
   def self.alphabetical
     @@all.sort_by { |song| song.name }
   end
 
-
+  def self.new_from_filename(filename)
+    song = self.new
+    ## split filename
+    song.name = filename.spilt(' - ')[1]
+    song.artist_name = filename.spilt(' - ')[0]
+    ## drop flie ext
+    song.name = song.name.spilt('.')[0]
+    song
+    
 end
