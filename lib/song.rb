@@ -1,4 +1,7 @@
+require 'pry'
+
 class Song
+
   attr_accessor :name, :artist_name
   @@all = []
 
@@ -8,6 +11,25 @@ class Song
 
   def save
     self.class.all << self
+  end
+
+  def self.destroy_all
+    self.all.clear
+  end
+
+  def self.find_by_name(name)
+    self.all.find{|person| person.name == name}
+  end
+
+  def self.create
+    song = self.new
+    @@all << song
+    song
+  end
+
+  def self.new_by_name(name)
+    self.all.new{|song| song.name == name}
+
   end
 
 end
